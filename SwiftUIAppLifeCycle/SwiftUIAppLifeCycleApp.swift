@@ -9,6 +9,16 @@ import SwiftUI
 
 @main
 struct SwiftUIAppLifeCycleApp: App {
+    
+    init() {
+        configureFirebaseSDK()
+    }
+    
+    private func configureFirebaseSDK() {
+        print("Configure Firebase...")
+        print("Firebase Configured.")
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
