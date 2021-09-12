@@ -12,7 +12,7 @@ struct ContentView: View {
         NavigationView {
             NavigationLink(destination: DetailView()) {
                 List(0 ..< 5) { item in
-                    Text("Hello, world!")
+                    Text("Hello, world! \(item)")
                         .padding()
                 }
             }
