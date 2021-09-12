@@ -16,6 +16,9 @@ struct DetailView: View {
             .onDisappear(perform: {
                 print("DetailView - onDisappear")
             })
+            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification), perform: { _ in
+                print(UIDevice.current.orientation)
+            })
     }
 }
 
