@@ -13,18 +13,7 @@ struct ContentView: View {
         NavigationView {
             NavigationLink(destination: DetailView()) {
                 List(0 ..< 5) { item in
-                    VStack(alignment: .leading, spacing: 5.0) {
-                        Text("Hello, world! \(item)")
-                            .font(.headline)
-                        
-                        Text("Some detail")
-                            .font(.footnote)
-                            .padding(.bottom, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        
-                        Image(systemName: "photo.fill")
-                            .resizable()
-                            .frame(width: 350, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    }
+                    ItemCell()
                 }
             }
             .navigationBarTitle(Text("SwiftUI App Life Cycle"))
