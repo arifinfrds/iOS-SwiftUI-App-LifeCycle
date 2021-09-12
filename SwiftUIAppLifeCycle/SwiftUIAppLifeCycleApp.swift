@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct SwiftUIAppLifeCycleApp: App {
     
+    @Environment(\.scenePhase) var scenePhase
+    
     init() {
         configureFirebaseSDK()
     }
@@ -23,5 +25,32 @@ struct SwiftUIAppLifeCycleApp: App {
         WindowGroup {
             ContentView()
         }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                startMessagingService()
+            case .inactive:
+                unregisterMessagingService()
+            case .background:
+                startMessagingServiceInLowPriority()
+            @unknown default:
+                break
+            }
+        }
+    }
+    
+    private func startMessagingService() {
+        print("Starting messaging service ...")
+        print("messaging started.")
+    }
+    
+    private func unregisterMessagingService() {
+        print("Unregistering messaging service ...")
+        print("messaging unregistered.")
+    }
+    
+    private func startMessagingServiceInLowPriority() {
+        print("Starting messaging service with low priority ...")
+        print("low priority messaging started.")
     }
 }
