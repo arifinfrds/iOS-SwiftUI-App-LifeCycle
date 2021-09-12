@@ -15,4 +15,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        
+        let sceneConfiguration = UISceneConfiguration(
+            name: "Scene Delegate",
+            sessionRole: connectingSceneSession.role
+        )
+        
+        sceneConfiguration.delegateClass = SceneDelegate.self
+        
+        return sceneConfiguration
+        
+    }
 }
