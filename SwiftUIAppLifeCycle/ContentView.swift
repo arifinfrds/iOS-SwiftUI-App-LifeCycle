@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationView {
             NavigationLink(destination: DetailView()) {
                 List(0 ..< 5) { item in
-                    Text("Hello, world! \(item)")
-                        .padding()
+                    VStack(alignment: .leading, spacing: 5.0) {
+                        Text("Hello, world! \(item)")
+                            .font(.headline)
+                        
+                        Text("Some detail")
+                            .font(.footnote)
+                    }
                 }
             }
             .navigationBarTitle(Text("SwiftUI App Life Cycle"))
