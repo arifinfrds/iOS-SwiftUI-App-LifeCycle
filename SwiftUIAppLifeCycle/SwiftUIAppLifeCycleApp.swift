@@ -11,6 +11,7 @@ import SwiftUI
 struct SwiftUIAppLifeCycleApp: App {
     
     @Environment(\.scenePhase) var scenePhase
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {
         configureFirebaseSDK()
