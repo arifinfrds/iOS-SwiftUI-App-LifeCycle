@@ -11,6 +11,7 @@ class SceneDelegate: NSObject, UISceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        // scene delegate not called
         print("SceneDelegate - willConnectTo()")
     }
 }
